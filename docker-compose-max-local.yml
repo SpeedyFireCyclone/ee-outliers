@@ -1,0 +1,10 @@
+version: '3'
+services:
+  outliers:
+    build: .
+    container_name: outliers_dev_ml_max
+    command: "python3 outliers.py interactive --config /mappedvolumes/config/outliers.conf --use-cases /use_cases/*.conf"
+    volumes:
+      - ./defaults/outliers_max_local.conf:/mappedvolumes/config/outliers.conf
+      - ./use_cases/examples_ml:/use_cases
+    network_mode: host
