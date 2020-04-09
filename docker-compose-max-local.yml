@@ -7,4 +7,5 @@ services:
     volumes:
       - ./defaults/outliers_max_local.conf:/mappedvolumes/config/outliers.conf
       - ./use_cases/examples_ml:/use_cases
+      - ./app:/app
     network_mode: host
